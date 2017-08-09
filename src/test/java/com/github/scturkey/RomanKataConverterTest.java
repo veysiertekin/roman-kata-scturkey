@@ -10,6 +10,6 @@ class RomanKataConverterTest {
     @CsvFileSource(resources = "/data.csv")
     void roman_number_test(int given, String expected) throws Exception {
         RomanKataConverter converter = new RomanKataConverter();
-        assertEquals(converter.convert(given), expected);
+        assertEquals(expected,converter.convert(given));
     }
 }
