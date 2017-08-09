@@ -30,8 +30,7 @@ public class RomanKataConverter {
         } else if (decimal < 50) {
             return getDiscreteParts(decimal, 40);
         } else if (decimal < 100) {
-            final int number = 50;
-            return getDiscreteParts(decimal, number);
+            return getDiscreteParts(decimal, 50);
         } else if (decimal < 400) {
             return getConcatRepetativeRomanNumber("C", decimal / 100) + convert(decimal % 100);
         } else if (decimal < 500) {
