@@ -22,5 +22,17 @@ public class RomanKataConverterTest {
         RomanKataConverter converter = new RomanKataConverter();
         assertEquals(converter.convert(3),"III");
     }
+    
+    @Test
+    public void five_shouldConvertTo_V() throws Exception {
+        RomanKataConverter converter = new RomanKataConverter();
+        assertEquals(converter.convert(5),"V");
+    }
+    
+    @Test
+    public void ten_shouldConvertTo_X() throws Exception {
+        RomanKataConverter converter = new RomanKataConverter();
+        assertEquals(converter.convert(10),"X");
+    }
 
 }
