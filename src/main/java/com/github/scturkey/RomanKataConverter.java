@@ -29,14 +29,18 @@ public class RomanKataConverter {
             return getConcatRepetativeRomanNumber("X", decimal / 10) + convert(decimal % 10);
         } else if (decimal < 50) {
             return getDiscreteParts(decimal, 40);
-        } else if (decimal < 100) {
+        } else if (decimal < 90) {
             return getDiscreteParts(decimal, 50);
+        } else if (decimal < 100) {
+            return getDiscreteParts(decimal, 90);
         } else if (decimal < 400) {
             return getConcatRepetativeRomanNumber("C", decimal / 100) + convert(decimal % 100);
         } else if (decimal < 500) {
             return getDiscreteParts(decimal, 400);
+        } else if (decimal < 900) {
+            return getDiscreteParts(decimal, 500);
         } else if (decimal < 1000) {
-            return getConcatRepetativeRomanNumber("C", decimal / 100);
+            return getDiscreteParts(decimal, 900);
         } else {
             return getConcatRepetativeRomanNumber("M", decimal / 1000);
         }
