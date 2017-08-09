@@ -1,4 +1,4 @@
-package com.github.veysiertekin;
+package com.github.scturkey;
 
 import org.junit.Test;
 
