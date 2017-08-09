@@ -1,38 +1,15 @@
 package com.github.scturkey;
 
-import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RomanKataConverterTest {
-
-
-    @Test
-    public void one_shouldConvertTo_I() throws Exception {
+class RomanKataConverterTest {
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data.csv")
+    void roman_number_test(int given, String expected) throws Exception {
         RomanKataConverter converter = new RomanKataConverter();
-        assertEquals(converter.convert(1),"I");
+        assertEquals(converter.convert(given), expected);
     }
-    @Test
-    public void two_shouldConvertTo_II() throws Exception {
-        RomanKataConverter converter = new RomanKataConverter();
-        assertEquals(converter.convert(2),"II");
-    }
-    @Test
-    public void three_shouldConvertTo_III() throws Exception {
-        RomanKataConverter converter = new RomanKataConverter();
-        assertEquals(converter.convert(3),"III");
-    }
-    
-    @Test
-    public void five_shouldConvertTo_V() throws Exception {
-        RomanKataConverter converter = new RomanKataConverter();
-        assertEquals(converter.convert(5),"V");
-    }
-    
-    @Test
-    public void ten_shouldConvertTo_X() throws Exception {
-        RomanKataConverter converter = new RomanKataConverter();
-        assertEquals(converter.convert(10),"X");
-    }
-
 }
