@@ -9,10 +9,18 @@ public class RomanKataConverter {
             return "IV";
         } else if (decimal == 5) {
             return "V";
+        } else if (decimal == 50) {
+            return "L";
+        } else if (decimal == 500) {
+            return "D";
         } else if (decimal == 6) {
             return "VI";
-        } else {
+        } else if (decimal<100){
             return getConcatRepetativeRomanNumber("X", decimal / 10);
+        } else if (decimal<1000){
+            return getConcatRepetativeRomanNumber("C", decimal / 100);
+        } else {
+            return getConcatRepetativeRomanNumber("M", decimal / 1000);
         }
     }
 
